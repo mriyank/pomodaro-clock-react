@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import "../App.css";
 import BreakInterval from "./BreakInterval";
 import SessionLength from "./SessionLength";
+import Timer from "../Timer";
 
 class App extends React.Component {
   constructor() {
@@ -10,14 +11,19 @@ class App extends React.Component {
     this.state = {
       breakLength: 5,
       sessionLength: 25,
+      timerMinute: 25,
     };
   }
   render() {
     return (
       <main>
         <h2>Pomodoro Clock</h2>
+        <section className="internal-length-container">
         <BreakInterval breakInterval={this.state.breakLength} />
         <SessionLength sessionLength={this.state.sessionLength} />
+        </section>
+        <Timer TimerMinute={this.state.timerMinute} />
+        
       </main>
     );
   }

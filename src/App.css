@@ -1,4 +1,51 @@
-.title{
-  background-color: aliceblue;
-  height: 100px;
+main {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+h4 {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.interval-container {
+  display: flex;
+  margin: 0 40px;
+  align-items: center;
+}
+
+.internal-length-container {
+  display: flex;
+}
+
+button {
+  padding: 5px 12px;
+  margin: 0 10px;
+  height: 25px;
+  background-color: rgb(37, 73, 104);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #eee;
+}
+
+.interval-length {
+  font-size: 2rem;
+  margin: 0 10px;
+}
+
+.timer-container {
+  border: 2px solid gray;
+  margin-top: 48px;
+  border-radius: 25px;
+  width: 250px;
+  text-align: center;
 }
