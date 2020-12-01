@@ -7,7 +7,34 @@ class Timer extends React.Component {
     this.state = {
       isSession: true,
       timerSecond: 0,
+      intervalId: 0,
     };
+    this.play = this.play.bind(this);
+    this.decreaseTimer = this.decreaseTimer.bind(this);
+  }
+  paly() {
+    let intervalId = setInterval(this.decreaseTimer, 1000);
+    this.setState({
+      intervalId: intervalId,
+    });
+  }
+
+  decreaseTimer() {
+    switch (this.state.timerSecond) {
+      case 0:
+        this.props.UpdateTimerMinute()
+        this.setstate({
+          timerSecond: 59,
+        });
+        break;
+      default:
+        this.setState((prevState) => {
+          return {
+            timerSecond: prevState.timerSecond - 1,
+          };
+        });
+        break;
+    }
   }
 
   render() {
@@ -26,9 +53,9 @@ class Timer extends React.Component {
           </span>
         </section>
         <section className="timer-actions">
-          <button>Play</button>
-          <button>Stop</button>
-          <button>Refresh</button>
+          <button onClick={this.play}>Play</button>
+          <button onClick={this.stop}>Stop</button>
+          <button onClick={this.refresh}>Refresh</button>
         </section>
       </section>
     );

@@ -17,6 +17,8 @@ class App extends React.Component {
     this.onDecreaseBreakLength = this.onDecreaseBreakLength.bind(this);
     this.onIncreaseSessionLength = this.onIncreaseSessionLength.bind(this);
     this.onDecreaseSessionLength = this.onDecreaseSessionLength.bind(this);
+    this.onToggleInterval = this.onToggleInterval.bind(this);
+    this.onUpdateTimerMinute = this.onUpdateTimerMinute.bind(this);
   }
 
   onIncreaseBreakLength() {
@@ -39,6 +41,7 @@ class App extends React.Component {
     this.setState((prevState) => {
       return {
         sessionLength: prevState.sessionLength + 1,
+        timerMinute: prevState.sessionLength + 1,
       };
     });
   }
@@ -47,8 +50,29 @@ class App extends React.Component {
     this.setState((prevState) => {
       return {
         sessionLength: prevState.sessionLength - 1,
+        timerMinute: prevState.sessionLength - 1,
       };
     });
+  }
+
+  onUpdateTimerMinute() {
+    this.setState((prevState) => {
+      return {
+        timerMinute: prevState.timerMinute - 1,
+      };
+    });
+  }
+
+  onToggleInterval(isSession) {
+    if (isSession) {
+      this.setState({
+        timerMinute: SessionLength,
+      });
+    } else {
+      this.setState({
+        timerMinute: this.state.breakLength,
+      });
+    }
   }
 
   render() {
@@ -67,7 +91,12 @@ class App extends React.Component {
             decreaseSession={this.onDecreaseSessionLength}
           />
         </section>
-        <Timer timerMinute={this.state.timerMinute} />
+        <Timer
+          timerMinute={this.state.timerMinute}
+          breakLength={this.state.breakLength}
+          UpdateTimerMinute={this.onUpdateTimerMinute}
+          ToggleInterval={this.onToggleInterval}
+        />
       </main>
     );
   }
