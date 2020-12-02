@@ -1,5 +1,5 @@
 body {
-  background-color: #63D079;
+  background-color: #a7c0cd;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -34,14 +34,14 @@ main {
 
 .counter-btn, .counter-btn {
   border: none;
-  background-color: #263646;
+  background-color: #78909c;
   outline: none;
   color: #eee;
   padding: 2px 12px;
   height: 25px;
   border-radius: 2px;
   cursor: pointer;
-  width: 55px;
+  width: 65px;
   text-align: center;
 }
 

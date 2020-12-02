@@ -18,7 +18,7 @@ function BreakInterval(props) {
 
   return (
     <section id="break-interval-container">
-      <h4>Break Length</h4>
+      <h4>Break</h4>
       <section id="break-time-interval">
         <button
         disabled = {props.isPlay ? "disabled" : ""}

@@ -24,7 +24,7 @@ function SessionInterval(props) {
 
   return (
     <section id="session-interval-container">
-      <h4>Session Length</h4>
+      <h4>Session</h4>
       <section id="session-interval">
         <button
         disabled = {props.isPlay ? "disabled" : ""}
