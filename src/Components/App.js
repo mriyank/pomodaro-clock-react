@@ -3,6 +3,7 @@ import '../ComponentStyles/App.css';
 import BreakInterval from './BreakInterval';
 import SessionInterval from './SessionInterval';
 import Timer from './Timer';
+import FolkMe from './Folkme';
 
 class App extends React.Component {
   constructor() {
@@ -80,6 +81,15 @@ class App extends React.Component {
           resetTimer = {this.onResetTimer}
           />
         </section>
+
+        <FolkMe
+          targetURL={this.props.githubURL}
+          color="#4c4d4e"
+          backgroundColor="#fff"
+          position="right"
+          size="120px"
+          ariaLabel="View source on Github"
+        />
       </main>
     )
   }
