@@ -1,4 +1,4 @@
-# [Pomodaro Clock - React](https://mypomodoroclock.netlify.app/)
+# [Pomodoro Clock - React](https://mypomodoroclock.netlify.app/)
 
 <br/><br/>
 
